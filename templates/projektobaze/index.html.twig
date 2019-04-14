@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projektobaze index{% endblock %}
+
+{% block body %}
+    <h1>Projektobaze index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for projektobaze in projektobazes %}
+            <tr>
+                <td>{{ projektobaze.id }}</td>
+                <td>
+                    <a href="{{ path('projektobaze_show', {'id': projektobaze.id}) }}">show</a>
+                    <a href="{{ path('projektobaze_edit', {'id': projektobaze.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('projektobaze_new') }}">Create new</a>
+{% endblock %}

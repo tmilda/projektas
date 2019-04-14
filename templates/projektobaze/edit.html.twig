@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Projektobaze{% endblock %}
+
+{% block body %}
+    <h1>Edit Projektobaze</h1>
+
+    {{ include('projektobaze/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('projektobaze_index') }}">back to list</a>
+
+    {{ include('projektobaze/_delete_form.html.twig') }}
+{% endblock %}
